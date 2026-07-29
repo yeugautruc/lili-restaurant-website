@@ -308,6 +308,11 @@ a { color: inherit; }
   flex-direction: column;
   transition: border-color .15s ease;
 }
+.item-card--highlight { animation: itemHighlightPulse 1.8s ease; }
+@keyframes itemHighlightPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 198, 40, 0); border-color: var(--border); }
+  15%, 60% { box-shadow: 0 0 0 4px rgba(255, 198, 40, .55); border-color: var(--gold); }
+}
 .item-card:hover { border-color: var(--gold); }
 .item-card__img { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--paper-dim); }
 .item-card__img img { width: 100%; height: 100%; object-fit: cover; }

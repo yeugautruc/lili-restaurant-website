@@ -114,8 +114,11 @@ function initMenu() {
   const main = document.getElementById("menuMain");
   const byId = new Map(CATEGORIES.map((c) => [c.id, c]));
 
-  const hashCat = location.hash.startsWith("#cat-") ? location.hash.slice(5) : null;
-  const initialCatId = hashCat && byId.has(hashCat) ? hashCat : CATEGORIES[0].id;
+  const hashItemCode = location.hash.startsWith("#item-") ? location.hash.slice(6) : null;
+  const allItems = CATEGORIES.flatMap((c) => c.items);
+  const hashItem = hashItemCode ? allItems.find((it) => it.code === hashItemCode) : null;
+  const hashCatId = hashItem ? CATEGORIES.find((c) => c.items.includes(hashItem))?.id : null;
+  const initialCatId = hashCatId && byId.has(hashCatId) ? hashCatId : CATEGORIES[0].id;
 
   const tabHtml = (c) =>
     `<button class="category-tab${c.id === initialCatId ? " active" : ""}" data-cat="${c.id}">${esc(localized(c, "title"))}</button>`;
@@ -155,9 +158,17 @@ function initMenu() {
   );
   if (defaultGroupEl) setGroupOpen(defaultGroupEl, true);
 
-  // Arrived via a direct link to a category (e.g. from the Sushi-tanzt price link) — jump to it.
-  if (hashCat && byId.has(hashCat)) {
-    requestAnimationFrame(() => main.scrollIntoView({ behavior: "smooth", block: "start" }));
+  // Arrived via a direct link to an item (e.g. from the Sushi-tanzt price link) — jump straight to its card.
+  if (hashItem) {
+    requestAnimationFrame(() => {
+      const card = main.querySelector(`.item-card[data-code="${CSS.escape(hashItem.code)}"]`);
+      const target = card || main;
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (card) {
+        card.classList.add("item-card--highlight");
+        setTimeout(() => card.classList.remove("item-card--highlight"), 1800);
+      }
+    });
   }
 
   nav.addEventListener("click", (e) => {
@@ -386,7 +397,7 @@ function renderSushiDance() {
         <img class="sushi-dance__img" src="${staticSrc}" data-static="${staticSrc}" data-dancing="${dancingSrc}"
              alt="${esc(localized(item, "name"))}" loading="lazy" style="animation-delay:${(i * 0.35).toFixed(2)}s">
         <span class="sushi-dance__label">${esc(localized(item, "name"))}<br>
-          <a class="sushi-dance__price-link" href="bestellen.html#cat-${esc(category.id)}">${fmtPrice(itemBasePrice(item))}</a>
+          <a class="sushi-dance__price-link" href="bestellen.html#item-${esc(item.code)}">${fmtPrice(itemBasePrice(item))}</a>
         </span>
       </div>`;
   }).join("");
