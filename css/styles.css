@@ -222,7 +222,6 @@ a { color: inherit; }
 .hero__content h1 { font-size: clamp(2.1rem, 5vw, 3.6rem); margin-bottom: 14px; font-weight: 600; }
 .hero__content p { font-size: 1.08rem; max-width: 560px; margin-bottom: 26px; opacity: .95; }
 .hero__actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.hero__actions-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero__actions .btn-outline { color: #fff; border-color: #fff; }
 
 /* ---------- Category nav ---------- */
@@ -473,9 +472,6 @@ textarea { resize: vertical; min-height: 70px; }
   .header-actions .btn span.label { display: none; }
   .header-actions button[data-open-reservation] span.label { display: inline-flex; }
   .header-actions button[data-open-reservation] > span:not(.label) { display: none; }
-  .hero__actions { flex-direction: column; align-items: flex-start; }
-  .hero__actions > .btn-cta { display: none; }
-  .hero-view-menu-btn { background: var(--ember); border-color: var(--ember); color: #fff; }
 }
 
 /* ---------- Home page sections ---------- */
