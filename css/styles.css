@@ -528,6 +528,7 @@ textarea { resize: vertical; min-height: 70px; }
 .featured-dishes__main .menu-grid { text-align: left; margin-top: 28px; }
 @media (max-width: 900px) {
   .featured-dishes__layout { grid-template-columns: 1fr; }
+  .sushi-dance { order: -1; }
 }
 
 /* ---------- Sushi tanzt (playful hover mascots, compact sidebar) ---------- */
@@ -587,6 +588,11 @@ textarea { resize: vertical; min-height: 70px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .sushi-dance__img { animation: none; }
+}
+@media (max-width: 900px) {
+  .sushi-dance__item { width: 108px; }
+  .sushi-dance__img { width: 92px; height: 92px; }
+  .sushi-dance__label { opacity: 1; transform: none; }
 }
 
 .highlight-strip { background: var(--moss-dark); color: #E4E7DF; padding: 52px 20px; }

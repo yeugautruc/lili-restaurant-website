@@ -359,6 +359,9 @@ const SUSHI_DANCE_ITEMS = [
   { code: "69", slug: "ebi-nigiri" },
   { code: "86", slug: "california-io" },
   { code: "71", slug: "unagi-nigiri" },
+  { code: "64", slug: "avocado-maki" },
+  { code: "8", slug: "gyoza" },
+  { code: "3", slug: "miso-suppe" },
 ];
 
 function renderSushiDance() {
