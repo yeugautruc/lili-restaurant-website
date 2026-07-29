@@ -360,8 +360,13 @@ a { color: inherit; }
 .option-row.selected { border-color: var(--moss); background: #EAF3E2; }
 .option-row input { accent-color: var(--moss); }
 input[type="text"], input[type="tel"], input[type="date"], input[type="time"], input[type="number"], textarea {
-  width: 100%; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+  width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box;
+  padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--radius-sm);
   font-family: inherit; font-size: 0.9rem; background: #fff; color: var(--text);
+}
+input[type="date"], input[type="time"] {
+  -webkit-appearance: none;
+  appearance: none;
 }
 textarea { resize: vertical; min-height: 70px; }
 .modal-actions { display: flex; gap: 10px; margin-top: 18px; }
