@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum – Lili Sushi Asia Küche</title>
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Lili Sushi Asia Küche Logo">
+      <span data-restaurant-name>Lili Sushi Asia Küche</span>
+    </a>
+  </div>
+</header>
+
+<div class="legal-page">
+  <h1>Impressum</h1>
+  <p><em>Hinweis: Diese Angaben sind Platzhalter aus <code>js/config.js</code> (Feld <code>legal</code>). Bitte vor Veröffentlichung mit echten Daten befüllen.</em></p>
+
+  <h2>Angaben gemäß § 5 TMG / TDDDG</h2>
+  <p id="legalBlock"></p>
+
+  <h2>Kontakt</h2>
+  <p id="contactBlock"></p>
+
+  <h2>Umsatzsteuer-ID</h2>
+  <p id="vatBlock"></p>
+
+  <h2>Streitschlichtung</h2>
+  <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+  <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
+  Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle nicht verpflichtet und nicht bereit.</p>
+</div>
+
+<script type="module">
+import { CONFIG } from "./js/config.js";
+const l = CONFIG.legal;
+document.getElementById("legalBlock").innerHTML =
+  `${l.ownerName}<br>${l.legalForm}<br>${l.street}<br>${l.zip} ${l.city}` +
+  (l.tradeRegister ? `<br>${l.tradeRegister}` : "") +
+  (l.responsiblePerson ? `<br>Verantwortlich für den Inhalt: ${l.responsiblePerson}` : "");
+document.getElementById("contactBlock").innerHTML = `Telefon: ${l.phone}<br>E-Mail: ${l.email}`;
+document.getElementById("vatBlock").textContent = l.vatId || "—";
+</script>
+</body>
+</html>

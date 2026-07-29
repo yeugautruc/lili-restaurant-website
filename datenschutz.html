@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung – Lili Sushi Asia Küche</title>
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Lili Sushi Asia Küche Logo">
+      <span data-restaurant-name>Lili Sushi Asia Küche</span>
+    </a>
+  </div>
+</header>
+
+<div class="legal-page">
+  <h1>Datenschutzerklärung</h1>
+
+  <h2>1. Verantwortlicher</h2>
+  <p id="responsibleBlock"></p>
+
+  <h2>2. Diese Website speichert keine Daten auf einem eigenen Server</h2>
+  <p>Diese Website ist eine rein clientseitige (statische) Webseite ohne eigene Datenbank und ohne eigenes Backend.
+  Es findet keine Analyse/Tracking (z. B. Google Analytics) und kein Cookie-Consent-Banner statt, weil keine
+  entsprechenden Cookies gesetzt werden.</p>
+
+  <h2>3. Warenkorb (lokaler Speicher)</h2>
+  <p>Die Artikel in Ihrem Warenkorb werden ausschließlich lokal in Ihrem Browser gespeichert (<code>localStorage</code>),
+  damit der Warenkorb beim erneuten Öffnen der Seite erhalten bleibt. Diese Daten verlassen niemals Ihr Gerät und
+  werden nicht an uns oder Dritte übertragen, bis Sie aktiv auf „Bestellen“ klicken.</p>
+
+  <h2>4. Bestellung &amp; Tischreservierung per WhatsApp</h2>
+  <p>Wenn Sie eine Bestellung aufgeben oder einen Tisch reservieren, öffnet die Website WhatsApp mit einer
+  vorausgefüllten Nachricht (Name, Bestellinhalt bzw. Reservierungsdetails). Diese Nachricht wird erst versendet,
+  wenn Sie sie in WhatsApp selbst bestätigen/absenden. Dabei werden die von Ihnen eingegebenen Daten
+  (Name, Uhrzeit, Personenzahl, ggf. Telefonnummer Ihres WhatsApp-Kontos) an WhatsApp Ireland Limited bzw.
+  Meta Platforms, Inc. übermittelt und dort nach deren eigenen Datenschutzbestimmungen verarbeitet
+  (siehe <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">WhatsApp-Datenschutzrichtlinie</a>).
+  Dies kann eine Datenübermittlung in Länder außerhalb der EU/des EWR (u. a. USA) einschließen.
+  Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung auf Ihre Anfrage).</p>
+
+  <h2>5. Hosting</h2>
+  <p>Beim Aufruf dieser Website verarbeitet der Hosting-Anbieter automatisch technische Zugriffsdaten
+  (u. a. IP-Adresse, Datum/Uhrzeit, aufgerufene Datei) in Server-Logfiles, wie bei jedem Webserver-Aufruf üblich.
+  Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Betrieb der Website).</p>
+
+  <h2>6. Ihre Rechte</h2>
+  <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit
+  und Widerspruch bezüglich Ihrer personenbezogenen Daten sowie das Recht auf Beschwerde bei einer
+  Datenschutz-Aufsichtsbehörde.</p>
+
+  <p><em>Hinweis: Kontaktdaten des Verantwortlichen sind Platzhalter aus <code>js/config.js</code> und müssen vor
+  Veröffentlichung ausgefüllt werden.</em></p>
+</div>
+
+<script type="module">
+import { CONFIG } from "./js/config.js";
+const l = CONFIG.legal;
+document.getElementById("responsibleBlock").innerHTML =
+  `${l.ownerName}<br>${l.street}<br>${l.zip} ${l.city}<br>E-Mail: ${l.email}<br>Telefon: ${l.phone}`;
+</script>
+</body>
+</html>

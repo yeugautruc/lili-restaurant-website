@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speisekarte – Lili Sushi Asia Küche</title>
+<meta name="description" content="Die vollständige Speisekarte von Lili Sushi Asia Küche in Bad Windsheim – Vorspeisen, Sushi, Hauptspeisen, Getränke und mehr.">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <span><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s7-7.58 7-12A7 7 0 0 0 5 9c0 4.42 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg> <span data-restaurant-address>An d. Alten Weed 18, 91438 Bad Windsheim</span> · Tel: <span data-restaurant-phone>09841 / 6529163</span></span>
+  <span class="lang-switch">
+    <button data-lang-switch="de">DE</button>
+    <button data-lang-switch="en">EN</button>
+  </span>
+</div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Lili Sushi Asia Küche Logo">
+      <span data-restaurant-name>Lili Sushi Asia Küche</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" data-i18n="nav_home">Startseite</a>
+      <a href="speisekarte.html" class="active" data-i18n="nav_menu">Speisekarte</a>
+      <a href="bestellen.html" data-i18n="order">Bestellen</a>
+      <a href="ueber-uns.html" data-i18n="nav_about">Über uns</a>
+      <a href="kontakt.html" data-i18n="nav_contact">Kontakt</a>
+      <a href="#" data-review-link target="_blank" rel="noopener" data-i18n="nav_reviews">Bewerten</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn btn-outline" data-open-reservation><span class="label"><svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg> </span><span data-i18n="reserve_table">Tisch reservieren</span></button>
+      <button class="btn btn-cart" data-open-cart><svg class="icon" viewBox="0 0 24 24"><path d="M4 5h2l1.6 10.2a2 2 0 0 0 2 1.8h7.8a2 2 0 0 0 2-1.6L21 8H6.2"/><circle cx="9" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg> <span class="label" data-i18n="cart">Warenkorb</span> <span class="cart-count">0</span></button>
+      <button class="lang-toggle-mobile" id="langToggleMobile" data-lang-toggle aria-label="Sprache wechseln"><span class="lang-toggle-mobile__opt" data-opt="de">DE</span><span class="lang-toggle-mobile__opt" data-opt="en">EN</span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="min-height:28vh;background-image:url('images/lili-menue/lili-menue-platte.webp');">
+  <div class="hero__content" style="padding:36px 20px;">
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);" data-i18n="menu_hero_title">Speisekarte</h1>
+    <p data-i18n="menu_hero_text">Vorspeisen, Sushi, Hauptspeisen, Nachtisch und Getränke – frisch zubereitet, zum hier Essen oder Mitnehmen.</p>
+  </div>
+</section>
+
+<section class="pdf-viewer">
+  <div class="container pdf-viewer__intro">
+    <div class="eyebrow" data-i18n="pdf_viewer_eyebrow">Speisekarte</div>
+    <h2 data-i18n="pdf_viewer_title">Unsere Speisekarte durchblättern</h2>
+    <p data-i18n="pdf_viewer_text">Wischen Sie seitlich oder nutzen Sie die Pfeile, um alle Seiten zu sehen.</p>
+  </div>
+  <div class="pdf-viewer__frame">
+    <button type="button" class="pdf-viewer__nav-btn pdf-viewer__nav-btn--prev" id="pdfPrev" aria-label="Vorherige Seite">‹</button>
+    <div class="pdf-viewer__carousel" id="pdfCarousel"></div>
+    <button type="button" class="pdf-viewer__nav-btn pdf-viewer__nav-btn--next" id="pdfNext" aria-label="Nächste Seite">›</button>
+  </div>
+  <div class="pdf-viewer__controls">
+    <span class="pdf-viewer__indicator" id="pdfPageIndicator">1 / 22</span>
+  </div>
+</section>
+
+<div class="pdf-lightbox" id="pdfLightbox">
+  <button type="button" class="pdf-lightbox__close" id="pdfLightboxClose" aria-label="Schließen">✕</button>
+  <button type="button" class="pdf-lightbox__nav-btn pdf-lightbox__nav-btn--prev" id="pdfLightboxPrev" aria-label="Vorherige Seite">‹</button>
+  <img id="pdfLightboxImg" src="" alt="">
+  <button type="button" class="pdf-lightbox__nav-btn pdf-lightbox__nav-btn--next" id="pdfLightboxNext" aria-label="Nächste Seite">›</button>
+</div>
+
+<section class="order-cta">
+  <div class="container">
+    <h2 data-i18n="order_cta_title">Bereit zum Bestellen?</h2>
+    <p data-i18n="order_cta_text">Bestellen Sie zum Abholen direkt online – schnell und unkompliziert.</p>
+    <a href="bestellen.html" class="btn btn-cta" data-i18n="order_cta_button">Jetzt bestellen →</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4 data-restaurant-name>Lili Sushi Asia Küche</h4>
+        <p data-restaurant-address>An d. Alten Weed 18, 91438 Bad Windsheim</p>
+        <p>Tel: <span data-restaurant-phone>09841 / 6529163</span></p>
+      </div>
+      <div>
+        <h4 data-i18n="opening_hours">Öffnungszeiten</h4>
+        <div data-opening-hours></div>
+      </div>
+      <div>
+        <h4 data-i18n="navigation">Navigation</h4>
+        <a href="index.html" data-i18n="nav_home">Startseite</a>
+        <a href="speisekarte.html" data-i18n="nav_menu">Speisekarte</a>
+        <a href="bestellen.html" data-i18n="order">Bestellen</a>
+        <a href="ueber-uns.html" data-i18n="nav_about">Über uns</a>
+        <a href="kontakt.html" data-i18n="nav_contact">Kontakt</a>
+        <a href="#" data-review-link target="_blank" rel="noopener" data-i18n="nav_reviews">Bewerten</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Lili Sushi Asia Küche</span>
+      <span>
+        <a href="impressum.html" data-i18n="legal_notice">Impressum</a> · <a href="datenschutz.html" data-i18n="privacy_policy">Datenschutz</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart drawer -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer__header">
+    <h3 data-i18n="cart">Warenkorb</h3>
+    <button class="close-x" id="closeCartBtn" style="position:static;">✕</button>
+  </div>
+  <div class="cart-drawer__items" id="cartItems"></div>
+  <div class="cart-drawer__footer">
+    <div class="cart-total"><span data-i18n="total">Gesamt</span><span id="cartTotal">0,00 €</span></div>
+    <button class="btn btn-cta" id="checkoutBtn" style="width:100%;" disabled data-i18n="order">Bestellen</button>
+  </div>
+</aside>
+
+<!-- Order modal -->
+<div class="overlay" id="orderOverlay">
+  <div class="modal">
+    <button class="close-x" id="closeOrderBtn">✕</button>
+    <h3 data-i18n="order_modal_title">Bestellung abschließen</h3>
+    <div class="sub" id="orderModalSub"></div>
+    <form id="orderForm">
+      <div class="field-group">
+        <label for="orderName" data-i18n="label_name">Name</label>
+        <input type="text" id="orderName" required>
+      </div>
+      <div class="field-group">
+        <label for="orderPhone" data-i18n="label_phone">Telefonnummer</label>
+        <input type="tel" id="orderPhone" required>
+      </div>
+      <div class="field-group">
+        <label for="orderPickupTime" data-i18n="label_pickup_time">Abholzeit</label>
+        <input type="time" id="orderPickupTime" required>
+      </div>
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-cta" style="width:100%;" data-i18n="send_whatsapp">Absenden</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Reservation modal -->
+<div class="overlay" id="reservationOverlay">
+  <div class="modal">
+    <button class="close-x" id="closeReservationBtn">✕</button>
+    <h3 data-i18n="reservation_modal_title">Tisch reservieren</h3>
+    <div class="sub" id="reservationModalSub"></div>
+    <form id="reservationForm">
+      <div class="field-group">
+        <label for="resName" data-i18n="label_name">Name</label>
+        <input type="text" id="resName" required>
+      </div>
+      <div class="field-group">
+        <label for="resPhone" data-i18n="label_phone">Telefonnummer</label>
+        <input type="tel" id="resPhone" required>
+      </div>
+      <div class="field-group">
+        <label for="resDate" data-i18n="label_date">Datum</label>
+        <input type="date" id="resDate" required>
+      </div>
+      <div class="field-group">
+        <label for="resTime" data-i18n="label_time">Uhrzeit</label>
+        <input type="time" id="resTime" required>
+      </div>
+      <div class="field-group">
+        <label for="resPax" data-i18n="label_pax">Anzahl Personen</label>
+        <input type="number" id="resPax" min="1" max="30" required>
+      </div>
+      <div class="field-group">
+        <label for="resNotes" data-i18n="label_notes">Anmerkung (optional)</label>
+        <textarea id="resNotes"></textarea>
+      </div>
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-cta" style="width:100%;" data-i18n="send_whatsapp">Absenden</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Result modal (success or error after sending) -->
+<div class="overlay" id="confirmOverlay">
+  <div class="modal confirm-modal">
+    <button class="close-x" id="closeConfirmBtn">✕</button>
+    <div class="confirm-modal__icon" id="confirmIcon">✓</div>
+    <h3 id="confirmTitle"></h3>
+    <div class="confirm-modal__details" id="confirmDetails"></div>
+    <div class="confirm-modal__note" id="confirmNote" data-i18n="confirm_pending_note">Noch nicht abgeschlossen.</div>
+    <div class="modal-actions" style="flex-direction:column;">
+      <button id="confirmRetryBtn" class="btn btn-cta" style="display:none;" data-i18n="retry_button">Erneut versuchen</button>
+      <button id="confirmOkBtn" class="btn btn-outline" data-i18n="ok_button">OK</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
