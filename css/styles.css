@@ -22,9 +22,10 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   margin: 0;
+  overflow-x: hidden;
   background: var(--paper);
   color: var(--text);
   font-family: 'Work Sans', system-ui, sans-serif;
@@ -510,9 +511,8 @@ textarea { resize: vertical; min-height: 70px; }
 @media (max-width: 800px) {
   .about-preview__grid { grid-template-columns: 1fr; }
   .about-preview__photo {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    margin-left: -20px;
+    margin-right: -20px;
     border-radius: 0;
     box-shadow: none;
   }
