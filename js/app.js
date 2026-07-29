@@ -114,8 +114,11 @@ function initMenu() {
   const main = document.getElementById("menuMain");
   const byId = new Map(CATEGORIES.map((c) => [c.id, c]));
 
-const tabHtml = (c) =>
-    `<button class="category-tab${c.id === CATEGORIES[0].id ? " active" : ""}" data-cat="${c.id}">${esc(localized(c, "title"))}</button>`;
+  const hashCat = location.hash.startsWith("#cat-") ? location.hash.slice(5) : null;
+  const initialCatId = hashCat && byId.has(hashCat) ? hashCat : CATEGORIES[0].id;
+
+  const tabHtml = (c) =>
+    `<button class="category-tab${c.id === initialCatId ? " active" : ""}" data-cat="${c.id}">${esc(localized(c, "title"))}</button>`;
 
   const singleCats = [];
   const groupsHtml = NAV_GROUPS.map((group, gi) => {
@@ -144,13 +147,18 @@ const tabHtml = (c) =>
     : "";
 
   nav.innerHTML = `<div class="category-nav__inner">${standaloneHtml}${groupsHtml}</div>`;
-  renderActiveCategory(CATEGORIES[0].id);
+  renderActiveCategory(initialCatId);
 
   // Open the group that contains the default active category.
   const defaultGroupEl = [...nav.querySelectorAll(".category-nav__group")].find((g) =>
     g.querySelector(".category-tab.active")
   );
   if (defaultGroupEl) setGroupOpen(defaultGroupEl, true);
+
+  // Arrived via a direct link to a category (e.g. from the Sushi-tanzt price link) — jump to it.
+  if (hashCat && byId.has(hashCat)) {
+    requestAnimationFrame(() => main.scrollIntoView({ behavior: "smooth", block: "start" }));
+  }
 
   nav.addEventListener("click", (e) => {
     const header = e.target.closest(".category-nav__group-header");
