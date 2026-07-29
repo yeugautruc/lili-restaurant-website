@@ -348,6 +348,26 @@ function initHeroVideo() {
   }
 }
 
+// ---------------- Floating scroll-to-top + cart shortcut (mobile) ----------------
+
+function initScrollFab() {
+  const fab = document.getElementById("scrollFab");
+  const topBtn = document.getElementById("scrollFabTop");
+  if (!fab || !topBtn) return;
+  let ticking = false;
+  const update = () => {
+    fab.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.6);
+    ticking = false;
+  };
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  }, { passive: true });
+  update();
+  topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+}
+
 // ---------------- Scroll reveal ----------------
 
 function initScrollReveal() {
@@ -709,6 +729,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFeaturedDishes();
   renderSushiDance();
   initScrollReveal();
+  initScrollFab();
   initCart();
 
   document.querySelectorAll("[data-open-reservation]").forEach((btn) => btn.addEventListener("click", openReservationModal));
