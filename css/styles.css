@@ -213,6 +213,7 @@ a { color: inherit; }
 .hero__content p { font-size: 1.08rem; max-width: 560px; margin-bottom: 26px; opacity: .95; }
 .hero__actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .hero__actions-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero__actions .btn-outline { color: #fff; border-color: #fff; }
 
 /* ---------- Category nav ---------- */
 .category-nav {
@@ -456,6 +457,8 @@ textarea { resize: vertical; min-height: 70px; }
   .brand span { display: none; }
   .header-actions .btn span.label { display: none; }
   .hero__actions { flex-direction: column; align-items: flex-start; }
+  .hero__actions > .btn-cta { display: none; }
+  .hero-view-menu-btn { background: var(--ember); border-color: var(--ember); color: #fff; }
 }
 
 /* ---------- Home page sections ---------- */
