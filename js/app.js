@@ -306,6 +306,12 @@ function initHeroVideo() {
     hero.classList.add("is-video-active");
     video.play().catch(() => {});
   };
+  const hasHover = window.matchMedia("(hover: hover)").matches;
+  if (!hasHover) {
+    // Mobile: no hover concept — just play as soon as the hero is on screen.
+    play();
+    return;
+  }
   hero.addEventListener("mouseenter", () => {
     video.currentTime = 0;
     play();
@@ -314,8 +320,13 @@ function initHeroVideo() {
     hero.classList.remove("is-video-active");
     video.pause();
   });
-  // touchstart fires on finger contact, before a full tap completes — no press needed on mobile.
-  hero.addEventListener("touchstart", play, { passive: true });
+  // Desktop: also autoplay once the hero scrolls into view, not only on hover.
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) play(); });
+    }, { threshold: 0.4 });
+    observer.observe(hero);
+  }
 }
 
 // ---------------- Scroll reveal ----------------
