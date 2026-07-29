@@ -71,8 +71,9 @@ a { color: inherit; }
 }
 .lang-switch button.active { background: var(--gold); color: var(--ink); border-color: var(--gold); }
 @media (max-width: 640px) {
-  .topbar { justify-content: center; }
+  .topbar { justify-content: center; white-space: nowrap; }
   .lang-switch { display: none; }
+  .topbar__sep, .topbar__phone { display: none; }
 }
 
 .lang-toggle-mobile {
