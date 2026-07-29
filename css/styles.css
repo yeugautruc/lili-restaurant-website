@@ -211,7 +211,8 @@ a { color: inherit; }
 .hero__content { position: relative; z-index: 1; padding: 60px 20px; max-width: 1180px; margin: 0 auto; }
 .hero__content h1 { font-size: clamp(2.1rem, 5vw, 3.6rem); margin-bottom: 14px; font-weight: 600; }
 .hero__content p { font-size: 1.08rem; max-width: 560px; margin-bottom: 26px; opacity: .95; }
-.hero__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero__actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.hero__actions-row { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* ---------- Category nav ---------- */
 .category-nav {
@@ -454,6 +455,7 @@ textarea { resize: vertical; min-height: 70px; }
 @media (max-width: 640px) {
   .brand span { display: none; }
   .header-actions .btn span.label { display: none; }
+  .hero__actions { flex-direction: column; align-items: flex-start; }
 }
 
 /* ---------- Home page sections ---------- */
