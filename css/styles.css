@@ -454,6 +454,8 @@ textarea { resize: vertical; min-height: 70px; }
   flex-direction: column; align-items: center; gap: 10px;
 }
 .scroll-fab.is-visible { display: flex; }
+body:has(.overlay.open) .scroll-fab,
+body:has(#drawerOverlay.open) .scroll-fab { display: none !important; }
 .scroll-fab__cart, .scroll-fab__top {
   width: 48px; height: 48px; border-radius: 50%; border: none;
   display: flex; align-items: center; justify-content: center;
