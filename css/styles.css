@@ -187,9 +187,11 @@ a { color: inherit; }
 }
 .hero::after {
   content: "";
-  position: absolute; left: 0; right: 0; bottom: 0;
-  height: clamp(50px, 8vh, 90px);
-  background: linear-gradient(180deg, transparent, var(--paper));
+  position: absolute; left: 0; right: 0; bottom: -1px;
+  height: clamp(46px, 7vh, 84px);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'><path d='M0,45 C240,95 480,0 720,35 C960,70 1200,10 1440,50 L1440,100 L0,100 Z' fill='%23FBFAF7'/></svg>");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 .hero__video {
   position: absolute; inset: 0; z-index: -1;
@@ -507,6 +509,15 @@ textarea { resize: vertical; min-height: 70px; }
 .about-preview__grid p { color: var(--text-light); margin-bottom: 20px; }
 @media (max-width: 800px) {
   .about-preview__grid { grid-template-columns: 1fr; }
+  .about-preview__photo {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .about-preview__photo::before { border-radius: 0; }
+  .about-preview__grid img { border-radius: 0; aspect-ratio: 4 / 3; }
 }
 
 .featured-dishes { padding: 20px 0 60px; }
