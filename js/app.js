@@ -416,9 +416,10 @@ function renderSushiDance() {
       <div class="sushi-dance__item">
         <img class="sushi-dance__img" src="${staticSrc}" data-static="${staticSrc}" data-dancing="${dancingSrc}"
              alt="${esc(localized(item, "name"))}" loading="lazy" style="animation-delay:${(i * 0.35).toFixed(2)}s">
-        <span class="sushi-dance__label">${esc(localized(item, "name"))}<br>
-          <a class="sushi-dance__price-link" href="bestellen.html#item-${esc(item.code)}">${fmtPrice(itemBasePrice(item))}</a>
-        </span>
+        <a class="sushi-dance__label" href="bestellen.html#item-${esc(item.code)}">
+          ${esc(localized(item, "name"))}<br>
+          <span class="sushi-dance__price-link">${fmtPrice(itemBasePrice(item))}</span>
+        </a>
       </div>`;
   }).join("");
   stage.querySelectorAll(".sushi-dance__img").forEach((img) => {

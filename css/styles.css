@@ -556,36 +556,30 @@ body:has(#drawerOverlay.open) .scroll-fab { display: none !important; }
   .about-preview__grid img { border-radius: 0; aspect-ratio: 4 / 3; }
 }
 
-.featured-dishes { padding: 20px 0 60px; }
-.featured-dishes__layout { display: grid; grid-template-columns: 1fr 300px; gap: 36px; align-items: start; }
-.featured-dishes__main { text-align: center; }
-.featured-dishes__main .menu-grid { text-align: left; margin-top: 28px; }
-@media (max-width: 900px) {
-  .featured-dishes__layout { grid-template-columns: 1fr; }
-  .sushi-dance { order: -1; }
-}
+.featured-dishes { padding: 20px 0 60px; text-align: center; }
+.featured-dishes .menu-grid { text-align: left; margin-top: 28px; }
 
-/* ---------- Sushi tanzt (playful hover mascots, compact sidebar) ---------- */
+/* ---------- Sushi tanzt (playful hover mascots, standalone section) ---------- */
 .sushi-dance {
   position: relative;
-  padding: 22px 16px;
+  padding: 56px 20px 64px;
   background: var(--paper-dim);
   background-image: radial-gradient(var(--border) 1.4px, transparent 1.4px);
   background-size: 20px 20px;
-  border-radius: var(--radius);
   text-align: center;
 }
-.sushi-dance__intro { position: relative; z-index: 2; }
-.sushi-dance__intro h3 { font-size: 1.2rem; color: var(--ember); margin: 4px 0 6px; font-weight: 600; }
-.sushi-dance__intro p { color: var(--text-light); font-size: 0.8rem; margin: 0; }
+.sushi-dance__intro { position: relative; z-index: 2; max-width: 560px; margin: 0 auto; }
+.sushi-dance__intro h3 { font-size: 1.7rem; color: var(--ember); margin: 4px 0 8px; font-weight: 600; }
+.sushi-dance__intro p { color: var(--text-light); font-size: 0.95rem; margin: 0; }
 .sushi-dance__stage {
   position: relative;
   z-index: 1;
+  max-width: 900px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 4px;
-  margin-top: 14px;
+  gap: 16px 10px;
+  margin: 24px auto 0;
 }
 .sushi-dance__item {
   display: flex;
@@ -604,8 +598,10 @@ body:has(#drawerOverlay.open) .scroll-fab { display: none !important; }
 }
 .sushi-dance__item:hover .sushi-dance__img { transform: scale(1.16); }
 .sushi-dance__label {
+  display: block;
   font-size: 0.68rem; font-weight: 600; color: var(--text);
   line-height: 1.3; text-align: center;
+  text-decoration: none;
   opacity: 0; transform: translateY(4px);
   transition: opacity .2s ease, transform .2s ease;
 }
