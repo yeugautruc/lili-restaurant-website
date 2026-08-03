@@ -29,15 +29,16 @@ export const CONFIG = {
 
   // ---- Impressum (§ 5 TMG/TDDDG) — fill in before publishing live ----
   legal: {
-    ownerName: "PLACEHOLDER_VOR_UND_NACHNAME_ODER_FIRMA",
-    legalForm: "PLACEHOLDER_z.B._Einzelunternehmen_oder_GmbH",
+    ownerName: "Ngo Xuan Chinh",
+    legalForm: "Einzelunternehmen", // aus Quittung abgeleitet (kein Handelsregister/GmbH sichtbar) — bitte bestätigen
     street: "An d. Alten Weed 18",
     zip: "91438",
     city: "Bad Windsheim",
     phone: "09841 / 6529163",
     email: "PLACEHOLDER_EMAIL@example.com",
-    vatId: "PLACEHOLDER_USt-IdNr_falls_vorhanden",
-    tradeRegister: "PLACEHOLDER_Handelsregister_falls_vorhanden",
+    taxNumber: "252/255/00986", // Steuernummer laut Kassenbon
+    vatId: "", // USt-IdNr (DE+9 Ziffern) — auf Bon nicht vorhanden, ggf. noch nicht vorhanden
+    tradeRegister: "",
     responsiblePerson: "PLACEHOLDER_falls_abweichend_vom_Inhaber",
   },
 };
