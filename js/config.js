@@ -13,7 +13,7 @@ export const CONFIG = {
     city: "Bad Windsheim",
     phoneDisplay: "09841 / 6529163",
     phoneHref: "+4998416529163",
-    email: "PLACEHOLDER_EMAIL@example.com",
+    email: "lilisuschi.badwindsheim@gmail.com",
     hours: [
       { days: "Mo. – Do.", days_en: "Mon – Thu", times: ["11:30 – 15:00 Uhr", "17:00 – 22:00 Uhr"], times_en: ["11:30 AM – 3:00 PM", "5:00 PM – 10:00 PM"] },
       { days: "Fr. – So.", days_en: "Fri – Sun", times: ["11:30 – 22:00 Uhr"], times_en: ["11:30 AM – 10:00 PM"] },
@@ -35,10 +35,10 @@ export const CONFIG = {
     zip: "91438",
     city: "Bad Windsheim",
     phone: "09841 / 6529163",
-    email: "PLACEHOLDER_EMAIL@example.com",
+    email: "lilisuschi.badwindsheim@gmail.com",
     taxNumber: "252/255/00986", // Steuernummer laut Kassenbon
     vatId: "", // USt-IdNr (DE+9 Ziffern) — auf Bon nicht vorhanden, ggf. noch nicht vorhanden
     tradeRegister: "",
-    responsiblePerson: "PLACEHOLDER_falls_abweichend_vom_Inhaber",
+    responsiblePerson: "", // leer = Inhaber ist verantwortlich (kein separater Ansprechpartner)
   },
 };
