@@ -545,14 +545,21 @@ body:has(#drawerOverlay.open) .scroll-fab { display: none !important; }
 .about-preview__grid h2 { font-size: 2rem; margin-bottom: 16px; font-weight: 600; }
 .about-preview__grid p { color: var(--text-light); margin-bottom: 20px; }
 @media (max-width: 800px) {
-  .about-preview__grid { grid-template-columns: 1fr; }
-  .about-preview__photo {
+  /* Text leads, photo follows as a clean full-bleed panel. The heading fills
+     the space under the hero wave, so there's no dead gap to explain away —
+     and a crisp photo edge reads better than fading it into the paper. */
+  .about-preview { padding: 40px 0 56px; }
+  .about-preview__grid { grid-template-columns: 1fr; gap: 28px; }
+  .about-preview__grid .about-preview__text { order: 1; --reveal-delay: 0s; }
+  .about-preview__grid .about-preview__photo {
+    order: 2;
+    --reveal-delay: .12s;
     margin-left: -20px;
     margin-right: -20px;
     border-radius: 0;
     box-shadow: none;
   }
-  .about-preview__photo::before { border-radius: 0; }
+  .about-preview__photo::before { display: none; }
   .about-preview__grid img { border-radius: 0; aspect-ratio: 4 / 3; }
 }
 
@@ -755,6 +762,11 @@ body:has(#drawerOverlay.open) .scroll-fab { display: none !important; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { --reveal-delay: .12s; }
 .reveal-delay-2 { --reveal-delay: .24s; }
+/* Small screens scroll faster and have less room — a shorter, quicker lift
+   keeps up with the thumb instead of trailing behind it. */
+@media (max-width: 800px) {
+  .reveal { transform: translateY(14px); transition-duration: .45s; }
+}
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
