@@ -304,7 +304,7 @@ function initPdfViewer() {
 
 // ---------------- Home page: featured dishes ----------------
 
-const FEATURED_CODES = ["111", "113", "115", "117"];
+const FEATURED_CODES = ["37", "42", "M6", "41"];
 
 function renderFeaturedDishes() {
   const container = document.getElementById("featuredDishes");

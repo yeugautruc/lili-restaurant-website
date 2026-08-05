@@ -11,7 +11,7 @@
 export const ITEM_IMAGE_FALLBACK = {
   // Mittag
   M2: "mittag/gebratene-nudeln.webp", M3: "mittag/gebratene-nudeln.webp", M4: "mittag/gebratene-nudeln.webp",
-  M5: "mittag/gebratene-nudeln.webp", M6: "mittag/gebratene-nudeln.webp",
+  M5: "mittag/gebratene-nudeln.webp",
   M11: "mittag/gebratener-reis.webp", M12: "mittag/gebratener-reis.webp", M13: "mittag/gebratener-reis.webp", M14: "mittag/gebratener-reis.webp",
   M20: "mittag/huehnerfleisch-suess-sauer.webp", M21: "mittag/huehnerfleisch-suess-sauer.webp",
   M30: "stock/chicken-panade.webp", M31: "stock/chicken-panade.webp", M32: "stock/chicken-panade.webp", M33: "stock/chicken-panade.webp",
@@ -28,9 +28,6 @@ export const ITEM_IMAGE_FALLBACK = {
   29: "stock/dark-sauce-stirfry.webp", 31: "stock/dark-sauce-stirfry.webp", 35: "stock/dark-sauce-stirfry.webp",
   33: "stock/glass-noodles.webp",
   34: "hauptspeisen/gebratene-asia-nudeln.webp",
-
-  // Nachtisch
-  41: "stock/sesame-dessert-ball.webp",
 
   // Vom Chefkoch Empfohlen
   T2: "hauptspeisen/ente-kross.webp", T3: "stock/squid-stirfry.webp", T4: "stock/squid-stirfry.webp",
@@ -161,7 +158,7 @@ export const CATEGORIES = [
       { code: "M3", name_de: "Mix-Nudeln", name_en: "Mixed noodles with shrimp, chicken, egg and curry powder", allergens: ["A", "B", "C", "F"], price: 14.50 },
       { code: "M4", name_de: "Gebratene Nudeln – mit paniertem Hähnchen und Ei", name_en: "Fried noodles with breaded chicken and egg", allergens: ["A", "C", "F"], price: 13.70 },
       { code: "M5", name_de: "Gebratene Nudeln – mit knuspriger Ente und Ei", name_en: "Fried noodles with crispy duck and egg", allergens: ["A", "C", "F"], price: 14.50 },
-      { code: "M6", name_de: "Gebratene Nudeln – mit Garnelen und Ei", name_en: "Fried noodles with shrimp and egg", allergens: ["A", "C", "F"], price: 14.70 },
+      { code: "M6", name_de: "Gebratene Nudeln – mit Garnelen und Ei", name_en: "Fried noodles with shrimp and egg", allergens: ["A", "C", "F"], price: 14.70, image: "mittag/gebratene-nudeln-garnelen.webp" },
       { code: "M10", name_de: "Gebratener Reis – mit frischem Gemüse und Ei", name_en: "Fried rice with fresh vegetables and egg", allergens: ["C", "F"], price: 12.70, image: "mittag/gebratener-reis.webp" },
       { code: "M11", name_de: "Gebratener Reis – mit Hühnerfleisch und Ei", name_en: "Fried rice with chicken and egg", allergens: ["C", "F"], price: 13.50 },
       { code: "M12", name_de: "Gebratener Reis – mit paniertem Hähnchen und Ei", name_en: "Fried rice with breaded chicken and egg", allergens: ["A", "C", "F"], price: 13.70 },
@@ -322,7 +319,7 @@ export const CATEGORIES = [
     title_en: "Dessert",
     items: [
       { code: "40", name_de: "Japanese Mochi (3 Stk.)", name_en: "Japanese mochi (3 pcs.)", desc_de: "Klebreiskuchen nach japanischer Art", desc_en: "Japanese-style sticky rice cake", price: 5.90, image: "nachtisch/mochi.webp" },
-      { code: "41", name_de: "Banh Vung (5 Stk.)", name_en: "Banh vung (5 pcs.)", desc_de: "Sesambällchen aus Klebreis, gefüllt mit grüner Bohnenpaste und in Sesam gewälzt", desc_en: "Sesame balls made from sticky rice, filled with green bean paste and rolled in sesame seeds", allergens: ["K"], price: 5.90 },
+      { code: "41", name_de: "Banh Vung (5 Stk.)", name_en: "Banh vung (5 pcs.)", desc_de: "Sesambällchen aus Klebreis, gefüllt mit grüner Bohnenpaste und in Sesam gewälzt", desc_en: "Sesame balls made from sticky rice, filled with green bean paste and rolled in sesame seeds", allergens: ["K"], price: 5.90, image: "nachtisch/banh-vung.webp" },
       { code: "42d", name_de: "Chuoi Chien (5 Stk.)", name_en: "Chuoi chien (5 pcs.)", desc_de: "Gebackene Banane in hausgemachter Panade mit Honig und Sesam", desc_en: "Baked banana in homemade breading with honey and sesame seeds", allergens: ["A1", "K"], price: 4.50, image: "nachtisch/chuoi-chien.webp" },
       { code: "43", name_de: "Lili-Eis (5 Stk.)", name_en: "Lili ice cream (5 pcs.)", desc_de: "Vanilleeis mit Mangosauce", desc_en: "Vanilla ice cream with mango sauce", allergens: ["G", "5"], price: 5.90, image: "nachtisch/lili-eis.webp" },
     ],
